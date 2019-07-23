@@ -1,3 +1,4 @@
 <div class="addressbookContainer">
-  <address-edit></address-edit>
+  <app-address-edit [addressToEdit]="addressToEdit" (updatedAddress)="getUpdatedAddress($event)"></app-address-edit>
+  <app-address-list (addressToEdit)="getClickedAddress($event)" [updatedAddress]="updatedAddress"></app-address-list>
 </div>

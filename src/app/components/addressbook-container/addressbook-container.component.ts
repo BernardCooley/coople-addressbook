@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AddressEditComponent } from './../address-edit/address-edit.component'
+
 
 @Component({
   selector: 'app-addressbook-container',
@@ -8,7 +8,18 @@ import { AddressEditComponent } from './../address-edit/address-edit.component'
 })
 export class AddressbookContainerComponent implements OnInit {
 
+  private addressToEdit: Array<string>;
+  private updatedAddress: Array<string>;
+
   constructor() { }
+
+  getClickedAddress(event) {
+    this.addressToEdit = event;
+  }
+
+  getUpdatedAddress(event) {
+    this.updatedAddress = event;
+  }
 
   ngOnInit() {
   }

@@ -1,3 +1,34 @@
-<p>
-  address-edit works!
-</p>
+<div class="addressEditContainer">
+    <form name="editAddressForm" class="editAddressForm" novalidate autocomplete="off" [formGroup]='editAddressForm'
+        (submit)='submitAddress()'>
+        <input #fullName class="" focus="true" type="text" name="fullName" placeholder="Full name*"
+            formControlName='fullName'>
+        <div class="errorMessage" *ngIf="fullNameErrors">
+            <div class="" *ngFor="let errorMessage of fullNameErrors">
+                <div>{{errorMessage}}</div>
+            </div>
+        </div>
+
+        <input #zip class="" focus="true" type="text" name="zip" placeholder="Zip code*" formControlName='zip'>
+        <div class="errorMessage" *ngIf="zipErrors">
+            <div class="" *ngFor="let errorMessage of zipErrors">
+                <div>{{errorMessage}}</div>
+            </div>
+        </div>
+
+        <input #country class="" focus="true" type="text" name="country" placeholder="Country*"
+            formControlName='country'>
+        <div class="errorMessage" *ngIf="countryErrors">
+            <div class="" *ngFor="let errorMessage of countryErrors">
+                <div>{{errorMessage}}</div>
+            </div>
+        </div>
+
+        <button id="sibmitAddressBtn" name="sibmitAddress" type="submit" class=""
+            [disabled]="editAddressForm.invalid" *ngIf="!addressToEdit">Submit</button>
+        
+        <button id="sibmitAddressBtn" name="sibmitAddress" type="submit" class=""
+            [disabled]="editAddressForm.invalid" *ngIf="addressToEdit">Update</button>
+
+    </form>
+</div>

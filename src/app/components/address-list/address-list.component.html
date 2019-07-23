@@ -1,0 +1,6 @@
+<div class="addressListContainer">
+
+    <div class="addressesContainer" *ngFor="let address of addresses; let index = index">
+        <app-address [updatedAddress]="updatedAddress" [address]="address" [index]="index" (addressToEdit)="getClickedAddressData($event)"></app-address>
+    </div>
+</div>

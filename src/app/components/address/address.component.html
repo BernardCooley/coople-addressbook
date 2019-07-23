@@ -1,0 +1,15 @@
+<div class="addressContainer" (click)="editCurrentAddress($event)">
+    <input name="index" type="hidden" [value]="index"/>
+  <div>
+    <div>Name: {{address.name}}</div>
+    <input name="fullName" type="hidden" [value]="address.name"/>
+  </div>
+  <div>
+      <div>Zip: {{address.address.zip}}</div>
+      <input name="zip" type="hidden" [value]="address.address.zip"/>
+  </div>
+  <div>
+    <div>Country: {{address.address.country}}</div>
+    <input name="country" type="hidden" [value]="address.address.country"/>
+  </div>
+</div>
